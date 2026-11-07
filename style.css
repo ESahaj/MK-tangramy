@@ -359,3 +359,28 @@ body[data-view="game"] main { padding-left: 1.3vw; padding-right: 1.3vw; }
   .quick-paging button { height: 25px; }
 }
 .quick-nav{align-self:center}@media(max-width:600px){.quick-nav{align-self:stretch}}
+
+/* Compact phone controls leave the main space to the puzzle. */
+#show-pictures { display:none; }
+@media (max-width:600px), (max-width:950px) and (max-height:500px) {
+ body[data-view="game"] header { display:none; }
+ body[data-view="game"] main { padding:4px; gap:4px; }
+ body[data-view="game"] .game-title { padding-right:0; }
+ body[data-view="game"] .game-head { grid-template-columns:auto 1fr; }
+ body[data-view="game"] .game-head h1 { font-size:17px; }
+ body[data-view="game"] .game-head p { font-size:10px; }
+ body[data-view="game"] .quick-nav { display:none; }
+ body[data-view="game"].show-pictures .quick-nav { display:grid; }
+ body[data-view="game"] .toolbar { gap:5px; justify-content:center; padding:0; }
+ body[data-view="game"] .toolbar .hint { display:none; }
+ body[data-view="game"] .toolbar button { min-height:36px; padding:6px 9px; font-size:12px; }
+ body[data-view="game"] #show-pictures { display:block; }
+ body[data-view="game"] .success { font-size:11px; padding:3px 8px; text-align:center; }
+ body[data-view="game"] .stage { border-radius:10px; }
+}
+@media (max-width:950px) and (max-height:500px) {
+ body[data-view="game"] .game-head .button { padding:4px 9px; }
+ body[data-view="game"] .game-title { display:flex; align-items:center; justify-content:center; gap:12px; }
+ body[data-view="game"] .game-head h1 { margin:0; }
+ body[data-view="game"] .toolbar button { min-height:30px; padding:3px 10px; }
+}
